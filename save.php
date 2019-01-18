@@ -95,5 +95,23 @@ else {
     $parution = $_POST['parution'];
 }
 
+// Deuxieme validation de l'existence des variable requises
+if (empty($type) || empty($auteur) || empty($titre) ) {
+    echo "Attention, le titre, l'auteur et le type sont obligatoires !";
+}
 
-
+else {
+    $req = "INSERT INTO mangas(titre, editeur, auteur, genre , type, parution)
+            VALUES(:titre, :editeur, :auteur, :genre, :type, :parution)";
+    $res = $bdd->prepare($req);
+    $res->execute([
+        'titre' => $titre,
+        'editeur' => $editeur,
+        'auteur' => $auteur,
+        'genre' => $genre,
+        'type' => $type,
+        'parution' => $parution,
+    ]);
+    // Eventuellement, j'affiche la dernière erreur SQL
+    var_dump( $res->errorInfo() );
+}
