@@ -2,7 +2,6 @@
 /**
  * Je vérifie que mes données soient bien transmises
  */
-var_dump($_POST);
 $host       = 'localhost';
 $dbname     = 'cours_php'; 
 $port       = '3308';  
@@ -114,4 +113,8 @@ else {
     ]);
     // Eventuellement, j'affiche la dernière erreur SQL
     var_dump( $res->errorInfo() );
+    echo "<a href='list.php'>afficher ma liste</a><br><br>";
+    echo "<a href='add.php'>ajouter un nouveau mangas !</a>";
 }
+
+
