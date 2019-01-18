@@ -33,7 +33,7 @@
             <option value="shojo">shojo</option>
         </select>
         <label for="parutionMangas">Date de parution</label>
-        <input class="form-control" type="number" name="parution" id="parutionMangas" min="1970" max="2069">
+        <input class="form-control" type="number" name="parution" id="parutionMangas" min="1970" max="2070">
         <button class="btn btn-success" type="submit">Ajouter</button>
     </form>
 
