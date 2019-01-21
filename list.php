@@ -75,16 +75,20 @@ while($donnees = $response->fetch() ) {
                 <?= $m['genre']; ?>
             </td>
             <td>
-                <?= date('Y', strtotime($m['parution'])); ?>
+                <?= date('Y', ($m['parution'])); ?>
             </td>
             <td>
                 <a href="show.php?manga=<?= $m['id']; ?>" class="btn btn-primary">Voir</a>
                 <a href="delete.php?manga=<?= $m['id']; ?>" class="btn btn-danger">Supprimer</a>
             </td>
+            
         </tr>
         <?php } ?>
+        
 
     </table>
+    <hr><br>
+    <a href="add.php" class="btn btn-succes">ajouter un mangas</a>
 
 </body>
 

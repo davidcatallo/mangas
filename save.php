@@ -2,6 +2,7 @@
 /**
  * Je vérifie que mes données soient bien transmises
  */
+
 $host       = 'localhost';
 $dbname     = 'cours_php'; 
 $port       = '3308';  
@@ -98,7 +99,7 @@ else {
 if (empty($type) || empty($auteur) || empty($titre) ) {
     echo "Attention, le titre, l'auteur et le type sont obligatoires !";
 }
-
+// ajout des valeurs du formulaire sur la table mangas
 else {
     $req = "INSERT INTO mangas(titre, editeur, auteur, genre , type, parution)
             VALUES(:titre, :editeur, :auteur, :genre, :type, :parution)";
@@ -110,9 +111,8 @@ else {
         'genre' => $genre,
         'type' => $type,
         'parution' => $parution,
-    ]);
-    // Eventuellement, j'affiche la dernière erreur SQL
-    var_dump( $res->errorInfo() );
+    ]);   
+
     echo "<a href='list.php'>afficher ma liste</a><br><br>";
     echo "<a href='add.php'>ajouter un nouveau mangas !</a>";
 }
